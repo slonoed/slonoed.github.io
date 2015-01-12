@@ -1,15 +1,18 @@
-name: Your New Jekyll Site
-description: Blogging about stuffs
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+name: Best way dev 
+description: Blog about good parts of web developing
+meta_description: "Best way dev, Blog about good parts of web developing"
 
 markdown: redcarpet
 highlighter: pygments
 logo: false
-paginate: 15
+paginate: 10
+paginate_path: "/page/:num"
 baseurl: /
-domain_name: 'http://yourblog-domain.com'
+domain_name: 'http://blog.slonoed.com'
 google_analytics: 'UA-XXXXXXXX-X'
 
 # Details for the RSS feed generator
-url:            'blog url'
-author:         'Your Name'
+url:            'http://blog.slonoed.com'
+author:         'Dmitry Manannikov'
+
+permalink: "/:categories/:title"

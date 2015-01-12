@@ -1,0 +1,8 @@
+---
+layout: post
+title: Mercurial (hg) удаление последнего коммита
+date: '2013-01-22T17:44:00.001+04:00'
+categories: ru 
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><u>Проблема</u>: вы сделали коммит в репозитории меркуриала, который делать не хотели. Например, вы сделали коммит в не ту ветку. Можно использовать <b>rollback</b>, но это значит портить историю. &nbsp;Можно заного сделать<b>&nbsp;clone</b>&nbsp;репозитория с удаленного сервера, понятно, чем это грозит.<br /><br /><u>Решение</u>: Mercurial есть возможность удалить коммит и его потомков, если они не были отправлены на удаленный репозиторий (в этом случае при следующем <b>pull</b>&nbsp;они придут обратно).<br /><br />Активируем расширение меркуриала <b>mq</b>. Открываем файл конфига (<i>путь_к_репозиторию/.hg/hgrc).</i><br /><i><br /></i>Ищем строку<br /><span style="background-color: white; font-family: Courier New, Courier, monospace;">[extensions]</span><br /><span style="font-family: inherit;">Если такой строки нет, добавляет ее в конец.</span><br /><span style="font-family: inherit;">После этой строки пишем добавляем строку</span><br /><span style="background-color: white; font-family: Courier New, Courier, monospace;">mq =</span><br /><span style="font-family: inherit;">Сохраняем и закрываем фалй</span><br /><div style="text-align: left;"><br /></div>Теперь мы можем использовать команду<br /><span style="background-color: white; font-family: Courier New, Courier, monospace;">hg strip #<i>номер_ревизии</i></span><br /><br /><br />Эта команда удалит коммит с указанным номером и всех его потомков, а так же сложит его бэкап в&nbsp;<i>.hg/strip-backup</i></div>

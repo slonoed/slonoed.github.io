@@ -1,0 +1,7 @@
+---
+layout: post
+title: Вывод в Firebug из аддона Firefox
+categories: ru 
+---
+
+Если необходимо получить доступ к консоли Firebuga из кода аддонов, можно использовать следующий трюк: <pre class="brush:js"><br />window.Firebug = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)<br />            .getInterface(Components.interfaces.nsIWebNavigation)<br />            .QueryInterface(Components.interfaces.nsIDocShellTreeItem)<br />            .rootTreeItem<br />            .QueryInterface(Components.interfaces.nsIInterfaceRequestor)<br />            .getInterface(Components.interfaces.nsIDOMWindow).Firebug;<br /></pre>Тогда вывод в консоль выглядит следующим образом: <pre class="brush:js"><br />window.Firebug.Console.log(msg);<br /></pre>

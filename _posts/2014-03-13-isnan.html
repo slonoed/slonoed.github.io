@@ -1,0 +1,7 @@
+---
+layout: post
+title: Кошерный isNaN
+categories: ru
+---
+
+Нативный метод <b>isNaN</b> делает приведение типов при проверке. В итоге выражение <b>isNaN('hello')</b> выдаст <b>true</b>. Если необходимо проверить, что переменная является именно константой <b>NaN</b> можно использовать следующий метод.  <pre class="brush:js"><br />function betterIsNaN(v) {<br />  return v != v;<br />}<br /></pre>

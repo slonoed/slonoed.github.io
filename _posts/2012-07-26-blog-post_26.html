@@ -1,0 +1,7 @@
+---
+layout: post
+title: Округление числа
+categories: ru 
+---
+
+Для округления в меньшую сторону (отбрасывания дробной части) в Javascript есть метод <a href="http://www.w3schools.com/jsref/jsref_floor.asp">Math.floor</a>. Но так же есть ещё один интересный и лаконичный способ: <pre class="brush:js"><br />var floatNum = 1.123431532;<br />var intNum   = floatNum | 0;<br /></pre>В результате intNum будет иметь значение единица.  Разберемся почему так происходит. Согласно <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Bitwise_Operators">описанию этого оператора на developers.mozila.org</a>, оба его операнда приводятся к 32х-битным целым числам. После чего происходит побитовое ИЛИ с нулём, то есть возвращаемое число будет равно первому операнду.

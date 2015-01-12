@@ -1,3 +1,5 @@
+bundle exec jekyll serve
+
 # Kasper
 
 This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll. 
