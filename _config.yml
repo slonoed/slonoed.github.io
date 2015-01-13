@@ -1,6 +1,6 @@
 name: Best way dev 
-description: Blog about good parts of web developing
-meta_description: "Best way dev, Blog about good parts of web developing"
+description: All about good parts of web developing
+meta_description: "Best way dev, all about good parts of web developing"
 
 markdown: redcarpet
 highlighter: pygments
@@ -8,11 +8,11 @@ logo: false
 paginate: 10
 paginate_path: "/page/:num"
 baseurl: /
-domain_name: 'http://blog.slonoed.com'
-google_analytics: 'UA-XXXXXXXX-X'
+domain_name: 'http://slonoed.net'
+google_analytics: 'UA-58504841-1'
 
 # Details for the RSS feed generator
-url:            'http://blog.slonoed.com'
+url:            'http://slonoed.net'
 author:         'Dmitry Manannikov'
 
 permalink: "/:categories/:title"
