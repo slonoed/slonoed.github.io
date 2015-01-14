@@ -8,7 +8,7 @@ post_class: post-template
 <header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
         {% if page.categories contains 'ru' %} 
-        <a class="back-button icon-arrow-left" href="{{ site.baseurl }}ru">Список</a>
+        <a class="back-button icon-arrow-left" href="{{ site.blogurl }}ru">Список</a>
         {% else %}
         <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
         {% endif %}
@@ -67,7 +67,7 @@ post_class: post-template
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
                 <figure class="author-image">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.png)">
+                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.jpg?1)">
                     <span class="hidden">{{site.author}}'s Picture</span></a>
                 </figure>
                 <section class="author">
@@ -75,7 +75,7 @@ post_class: post-template
                     <h4> {{ site.author }} </h4>
                     <!-- Author Bio -->
                     <p> 
-                        Here goes the author description. You might want to place some links too in here
+                        Developer whose aim is to build complex and effective web applications.
                     </p>
                 </section>                
             {% endif %}

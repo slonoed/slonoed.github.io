@@ -8,6 +8,7 @@ logo: false
 paginate: 10
 paginate_path: "/page/:num"
 baseurl: /
+blogurl: /blog/
 domain_name: 'http://slonoed.net'
 google_analytics: 'UA-58504841-1'
 

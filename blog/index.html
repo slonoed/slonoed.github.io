@@ -1,0 +1,29 @@
+---
+layout: list
+title: Home
+cover: false
+---
+<h4 style="width: 80%; max-width: 710px;margin: 1rem auto">
+    Also post in russian <a href="{{ site.blogurl }}ru">available</a>
+</h4>
+
+{% for post in site.posts %}
+{% if post.categories contains 'ru' %} 
+{% else %} 
+<article class="post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    </header>
+
+    <footer class="post-meta">
+        {% if post.categories.size > 0 %} 
+            {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
+        {% endif %}
+        <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+            {{ post.date | date_to_string }}
+        </time> 
+    </footer>
+</article>
+
+{% endif %}
+{% endfor %}
