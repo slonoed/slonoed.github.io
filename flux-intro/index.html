@@ -61,6 +61,15 @@
                     <strong>And only view part of application</strong>
                 </section>
 
+                <section>
+                    <h2>React components</h2>
+                    <ul>
+                        <li>Small</li>
+                        <li>Easy to test</li>
+                        <li>Loose coupled</li>
+                    </ul>
+                </section>
+
 
                 <section>
                     <h2>Simple react component</h2>
@@ -134,6 +143,11 @@
                     <img class="no-border" src="images/1.png" height="129" width="627" alt="">
                 </section>
 
+                <section>
+                    <img class="no-border" src="images/3.png" height="129" width="627" alt="">
+                    <p>Dispatcher is event system</p>
+                    <p>Dispatcher is global object</p>
+                </section>
 
                 <section>
                     <img class="no-border" src="images/3.png" height="129" width="627" alt="">
@@ -174,6 +188,15 @@ var MessageStore = {
 
                 <section>
                     <img class="no-border" src="images/4a.png" height="129" width="627" alt="">
+                    <p>Store is not a model!</p>
+                    <p>Store contains models</p>
+                    <p>Store contain application state</p>
+                    <p>Only stores can register dispatcher callbacks</p>
+                    <p>Store is dingle "domain"</p>
+                </section>
+
+                <section>
+                    <img class="no-border" src="images/4a.png" height="129" width="627" alt="">
                     <pre><code  data-trim>
 MicroEvent.mixin(MessageStore);  
                 </code></pre>
@@ -187,6 +210,8 @@ case: 'newMessage':
     break;                        
                 </code></pre>
                 </section>
+
+
 
                 <section>
                     <img class="no-border" src="images/5.png" height="129" width="627" alt="">
@@ -212,6 +237,20 @@ componentWillUnmount: function() {
                 <section>
                     <h3>render()</h3>
                     <img src="images/5a.png" height="354" width="702" alt="">
+                </section>
+
+                <section>
+                    <p style="margin: 2em">Is this a good way to re-render entire component every time the store updated?</p>
+                </section>
+
+                <section>
+                    <p>Yes. Because in reality <strong>javascript is fast</strong>. 
+                    DOM is slow. </p>
+                </section>
+
+                <section>
+                    <h3>Why it’s so cool?</h3>
+                    <img style="border:none" src="images/6.png" height="127" width="614" alt="">
                 </section>
 
                 <section>
