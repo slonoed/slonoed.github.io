@@ -23,9 +23,12 @@ cover: false
         {% if post.categories.size > 0 %} 
             {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
         {% endif %}
-        <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-            {{ post.date | date_to_string }}
-        </time> 
+        
+        <a href="{{ post.url }}#disqus_thread">
+            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                {{ post.date | date_to_string }}
+            </time>
+        </a>
     </footer>
 </article>
 
