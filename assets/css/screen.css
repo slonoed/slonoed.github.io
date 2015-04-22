@@ -1780,3 +1780,10 @@ body:not(.post-template) .post-title {
         border-top: #EBF2F6 1px solid;
         margin-top: 4rem;
    }
+
+   .static-content {
+    border:none;
+   }
+   .static-content:after {
+    display: none;
+   }
