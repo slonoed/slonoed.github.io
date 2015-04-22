@@ -796,8 +796,6 @@ body:not(.post-template) .post-title {
 
 .post-date {
     display: inline-block;
-    padding-left: 12px;
-    border-left: #d5dbde 1px solid;
     text-transform: uppercase;
     font-size: 1.3rem;
     white-space: nowrap;
