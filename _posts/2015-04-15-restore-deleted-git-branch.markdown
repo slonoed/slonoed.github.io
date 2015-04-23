@@ -9,7 +9,7 @@ It can happen to anyone: remove branches that has not been merged.
 Quick fix:  
 
 1. `git reflog`
-2. Find last commit in deleted branch, copy it SHA (first column).
+2. Look for last commit in deleted branch, copy it SHA (first column).
 3. `git checkout [sha]`
 4. `git checkout -b restored-branch`
 5. You are amazing!
@@ -26,7 +26,7 @@ When you delete branch (with `git branch -D feature-branch`) git just delete thi
 ![simple brunch][2]
 
 Fortunately we can create new branch on this commit.
-First, you need to find SHA of this commit with `git reflog`
+First you need to find SHA of this commit with `git reflog`
 
 ```
 7a94c18 HEAD@{0}: commit: last commit
@@ -41,12 +41,12 @@ Now, move HEAD pointer to **feature commit**. ```git checkout 8879406```
 
 ![simple brunch][3]
 
-And, finally, create new branch
+And finally create new branch
 `git checkout -b restored-branch`
 
 ![simple brunch][4]
 
-*ps. always check git response to command: it notifies when you try to do smt stupid.*
+*ps. always check git response to command: it notifies when you try to do something stupid.*
 
 [1]: /assets/images/restore-deleted-git-branch/1.png "head and master"
 [2]: /assets/images/restore-deleted-git-branch/2.png "head and master"
