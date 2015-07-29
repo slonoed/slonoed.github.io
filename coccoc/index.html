@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        /* TODO BEM notation */
+        html {
+            font-family: "Helvetica Neue", Helvetica, Arial;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #3b3b3b;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+            background: #2b2b2b;
+        }
+        table {
+            position: relative;
+            background-color: #efe;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        table.active {
+            opacity: 0.8;
+        }
+
+        thead tr {
+            background: #ea6153;
+            color: #fff;
+        }
+        th {
+            cursor: pointer;
+        }
+
+        th[data-sort=asc]::after {
+            content: '▲';
+        }
+        th[data-sort=desc]::after {
+            content: '▼';
+        }
+
+        tbody tr {
+          display: table-row;
+          background: #f6f6f6;
+          cursor: move;
+        }
+        tbody tr:nth-of-type(odd) {
+          background: #e9e9e9;
+        }
+        tbody tr.indrag td {
+            background-color: #27ae60;
+            opacity: 0.8;
+        }
+        td, th {
+            padding: 0.5rem 1rem;
+        }
+
+        label {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        label input {
+            opacity: 0;
+            position: absolute;
+            top: -2rem;
+        }
+
+        label .button {
+            padding: 0.3rem 1rem;
+            text-align: center;
+            background: #ea6153;
+            transition: background 0.4s;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+        label .button:hover {
+            background: #e64130;
+        }
+    </style>
+</head>
+<body>
+    <div id="files"></div>
+    <br>
+    <br>
+    <div id="files2"></div>
+    <br>
+    <button id="serialize">Serialize</button>
+    <script src="./file-table.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
