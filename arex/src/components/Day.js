@@ -38,7 +38,6 @@ export default class Day extends Component {
             zIndex: 100,
             boxShadow: '0px 6px 49px 3px rgba(0,0,0,0.75)'
         } : {});
-
         return <div style={S.day}>
             {expanded && <div style={S.paranja} onClick={e => this.collapse(e)}></div>}
 

@@ -18,7 +18,7 @@ export default class Calendar extends Component {
     render() {
         const { contracts } = this.props;
         // sort contracts by date
-        contracts.sort((b, a) => a.date.isBefore(b.date));
+        contracts.sort((a, b) => a.date.toDate().getTime() - b.date.toDate().getTime())
 
         // Prepare calendar data. Range  include all days with contracts +
         // additional days to align calendar items
