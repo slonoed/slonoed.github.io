@@ -5,7 +5,7 @@ Libs used: React, moment, papaparse, lodash.
 
 Builded with Webpack.
 
-Start point: index.js
+Start point: ./src/index.js
 
 Install and start
 =================
