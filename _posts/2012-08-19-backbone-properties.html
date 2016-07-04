@@ -1,7 +1,0 @@
----
-layout: post
-title: backbone-properties
-categories: ru 
----
-
-В <a href="http://jquery.com/">Jquery</a> используются удобные методы-свойства, например. <pre class="brush:js"><br />jElement.val(); // работает как геттер<br />jElement.val('some value'); // работает как сеттер<br /></pre> В <a href="http://backbonejs.org/">Backbone</a> для доступа к различным свойствам используются методы get и set, в итоге во вьюшках приходиться писать <pre class="brush:js"><br />this.model.set('myattr');<br /></pre> Плагин <a href="https://github.com/SLonoed/backbone-properties">backbone-properties</a> добавляет метод createProperty в модель, который создаёт удобные методы доступа к атрибутам модели.  Пример объяснит лучше: <pre class="brush:js"><br />var User = Backbone.Model.extend({<br />  initialize: function() {<br />    // можно создать одно свойсто<br />    this.createProperty('name');<br /><br />    // или сразу массив<br />    this.createProperty([<br />      'age',<br />      'phone',<br />      'city'<br />    ]);<br />  }<br />});<br /><br />var albert = new User({<br />  name: 'Albert',<br />  age: 20,<br />  phone: '555-55-55',<br />  city: 'Tokyo'<br />});<br /><br /><br />albert.name(); // return 'Albert'<br /><br />albert.name('Ivan');<br />albert.name(); // return 'Ivan'<br /><br />// можно вторым параметром в сеттере указывать стандартные для Model.set опции<br />albert.age(22, {silent: true}); // не создаст событие change<br /></pre>

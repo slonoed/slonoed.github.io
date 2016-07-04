@@ -1,5 +1,7 @@
-_site
+.jekyll-metadata
+.htaccess
 .DS_Store
-*.swp
 .sass-cache
-
+Gemfile.lock
+_site/
+_drafts/

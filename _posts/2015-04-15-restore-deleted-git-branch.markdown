@@ -48,7 +48,7 @@ And finally create new branch
 
 *ps. always check git response to command: it notifies when you try to do something stupid.*
 
-[1]: /assets/images/restore-deleted-git-branch/1.png "head and master"
-[2]: /assets/images/restore-deleted-git-branch/2.png "head and master"
-[3]: /assets/images/restore-deleted-git-branch/3.png "head and master"
-[4]: /assets/images/restore-deleted-git-branch/4.png "head and master"
+[1]: /assets/img/restore-deleted-git-branch/1.png "head and master"
+[2]: /assets/img/restore-deleted-git-branch/2.png "head and master"
+[3]: /assets/img/restore-deleted-git-branch/3.png "head and master"
+[4]: /assets/img/restore-deleted-git-branch/4.png "head and master"

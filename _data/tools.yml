@@ -1,0 +1,8 @@
+- name: tnoty – send data to telegram messenger via webhook
+  url: https://hub.docker.com/r/slonoed/tnoty/
+
+- name: editro – visual HTML editor (alpha)
+  url: https://github.com/flocktory/editro
+
+- name: comparator – simple interface to compare strings
+  url: /comparator

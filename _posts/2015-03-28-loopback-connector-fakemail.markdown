@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "loopback-connector-fakemail"
+title:  "loopback-connector-fakemail (deprecated)"
 published: true
 excerpt: ""
 ---

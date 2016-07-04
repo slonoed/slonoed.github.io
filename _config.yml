@@ -1,19 +1,32 @@
-name: Best way dev 
+# Blog settings
+permalink: /:title
+
+
+# My variables
+name: Dmitry Manannikov
 description: All about good parts of web developing
 meta_description: "Best way dev, all about good parts of web developing"
-
-markdown: redcarpet
-highlighter: pygments
-logo: false
-paginate: 10
-paginate_path: "/page/:num"
-baseurl: /
-blogurl: /blog/
 domain_name: 'http://slonoed.net'
 google_analytics: 'UA-58504841-1'
+email: email@slonoed.net
 
-# Details for the RSS feed generator
-url:            'http://slonoed.net'
-author:         'Dmitry Manannikov'
 
-permalink: "/:categories/:title"
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
+
+baseurl: /
+blogurl: /
+
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge

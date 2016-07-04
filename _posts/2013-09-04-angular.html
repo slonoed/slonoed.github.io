@@ -1,7 +1,0 @@
----
-layout: post
-title: Angular приложение не в корне сайта
-categories: ru 
----
-
- У вас есть замечательное приложение и вы готовы вылить его в продакшен. Однако, хотите, что бы оно было доступно по пути <b>/superapp/</b>. Придётся все роуты переписывать на конструкции вида:  <br /><pre class="brush:js">angular.module('myApp').config(function ($routeProvider) {<br />  var basePath = '/superapp';<br />  $routeProvider.<br />  when(basePath + '/', {<br />    controller: HomeCtrl,<br />    templateUrl: 'home.html'<br />  }).<br />  when(basePath + '/login', {<br />    controller: LoginCtrl,<br />    templateUrl: 'login.html'<br />  });<br />});<br /></pre>Вариант рабочий, но клайне уродливый. Есть более изящное решение - использовать <a href="http://www.w3.org/TR/html-markup/base.html">base URL</a><br /> <pre class="brush:xml"><br />&lt;html ng-app="myApp"&gt;<br /> &lt;head&gt;<br />   &lt;base href="/superapp/" /&gt;<br />   ...<br /> &lt;/head&gt;<br /> &lt;body&gt;<br />   ...<br /> &lt;/body&gt;<br />&lt;/html&gt;<br /></pre> Теперь все ссылки будут резолвиться относительно этого пути. Т.е. ссылка вида &lt;a href="/login"&gt;login&lt;/a&gt; будет вести на адресс <i>http://example.com/superapp/login</i><br />Для того, чтобы не было проблем со ссылками лучше использовать html5 mode.  <br /><pre class="brush:js">angular.module('myApp').config(function ($locationProvider) {<br />  $locationProvider.html5Mode(true);<br />});<br /></pre>
