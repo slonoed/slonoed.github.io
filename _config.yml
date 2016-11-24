@@ -10,7 +10,6 @@ domain_name: 'http://slonoed.net'
 google_analytics: 'UA-58504841-1'
 email: email@slonoed.net
 
-
 # File management
 include: [".htaccess"]
 exclude: ["README.md", "LICENSE"]

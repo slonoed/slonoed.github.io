@@ -286,3 +286,42 @@ pre.highlight {
 	.vi { color: #008080 } /* Name.Variable.Instance */
 	.il { color: #009999 } /* Literal.Number.Integer.Long */
 }
+
+.comment {
+  &__label {
+    display: block;
+    margin: 10px 0 4px;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    font-family: "Inconsolata"!important;
+    font-size: 1em;
+    padding: 4px;
+  }
+}
+
+.comment {
+  background: #eee;
+  padding: 15px;
+  margin-bottom: 5px;
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  &__posted {
+    margin-top: 10px;
+  }
+}
+
+.btn {
+  border: none;
+  background: none;
+  color: #1A0DAB;
+  font-size: 1rem;
+  text-decoration: underline;
+  margin-top: 4px;
+  cursor: pointer;
+}

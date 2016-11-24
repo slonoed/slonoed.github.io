@@ -7,7 +7,24 @@ layout: default
     <h1 class="post__title">{{ page.title }}</h1>
     <p class="post__date">{{ page.date | date: '%Y %B %-d' }}</p>
     <p class="post__meta">{{ tags_content }}</p>
-    <div class="post__content"?>
+    <div class="post__content">
         {{ content }}
     </div>
+
+    <!-- comments -->
+    <h2 class="comments__header">Comments</h2>
+    <div id="comments">
+      LOADING...
+    </div>
+    <form id="add_comment">
+      <label for="name" class="comment__label">Name</label>
+      <input type="text" required id="name" class="comment__input" placeholder="The Good"/>
+      <label for="comment" class="comment__label">Comment</label>
+      <textarea id="comment" name="" cols="30" rows="6" class="comment__input" required
+        placeholder="One, two, three, four, five, six. Six. Perfect number."></textarea>
+      <button id="submit" type="submit" class="btn">Add comment</button>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+    <script>window.PAGE_ID = "{{ page.id }}"</script>
+    <script src="/assets/js/comments.js"></script>
 </div>
