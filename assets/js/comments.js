@@ -68,9 +68,17 @@ function appendComment(d) {
   var node = document.getElementById('comments');
   var c = document.createElement('div');
   c.className="comment";
-  c.innerHTML = '<div class="comment__name">' + d.name +
-    ' wrote:</div><div class="comment__text">' + d.text + '</div><div class="comment__posted">' +
-    formatTs(d.posted) +
-    '</div>';
+
+  var insert = function(cls, text) {
+    var n = document.createElement('div');
+    n.className = 'comment__' + cls;
+    n.textContent = text;
+    c.appendChild(n);
+  };
+
+  insert('name', d.name + ' wrote:');
+  insert('text', d.text);
+  insert('posted', formatTs(d.posted));
+
   node.appendChild(c);
 }
