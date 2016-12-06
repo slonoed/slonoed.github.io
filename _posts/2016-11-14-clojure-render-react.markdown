@@ -513,6 +513,8 @@ The last step is to put the submit handler on form (**components.cljc**). Note c
 ```
 
 ## Tips, notes, pitfalls
+You can find all code in [repo](https://github.com/slonoed/rum-server-render-example).
+
 This report shows only the basics of rum. I skip few useful topics. It's [documentation](https://github.com/tonsky/rum) pretty good.
 
 I didn't mention about hot reload at all. I think you can find more in [figwheel documentation](https://github.com/bhauman/lein-figwheel).
