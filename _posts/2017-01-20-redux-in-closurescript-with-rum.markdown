@@ -82,6 +82,7 @@ Open [http://localhost:3449/index.html](http://localhost:3449/index.html). You s
 
 ## Coding part (best part)
 We keep `resources/public/index.html` untouched
+
 ```html
 <!DOCTYPE html>
 <html>
