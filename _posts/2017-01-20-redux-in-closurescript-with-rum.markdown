@@ -5,14 +5,14 @@ published: true
 excerpt: ""
 ---
 
-Keep consistent code in you app is hard task. Keep consistent code in your team's app even harder. People love redux for two features:
-First, it is simple. If you don't use some weird libraries redux is about one object and few functions.
-Second, it provides strict understanding where the things should be. You have one place for state, one place for changing state (well, really you have bunch of reducers) and place for async logic (action creators).
+Keeping consistent code in your app is hard task. Keeping consistent code in your team's app even harder. People love redux for two features:
+Firstly, it is simple. If you don't use some weird libraries redux is about one object and few functions.
+Secondly, it provides strict understanding where the things should be. You have one place for state, one place for changing state (well, really you have bunch of reducers) and place for async logic (action creators).
 Other features like hot reload, state history, one way data flow you get for free.
 
-I want to show you how to achieve same profits with clojurescript and run library, using native language constructions and stdlib methods. 
+I want to show you how to achieve same profits with clojurescript and run library, using native language constructions and stdlib methods.
 
-This post target developers who already familiar with react, clojure and figwheel. If not check these links
+This post targets developers who already familiar with react, clojure and figwheel. If you are not, check these links
 
 * [Clojure for the Brave and True](http://www.braveclojure.com/) – nice book for one who wants to start with clojure
 * [clojuredocs.org](http://clojuredocs.org/) – online docs with examples and comments
@@ -20,22 +20,22 @@ This post target developers who already familiar with react, clojure and figwhee
 * [Reactjs](https://facebook.github.io/react/) – docs and tutorials
 * [How to Create ClojureScript App](https://medium.com/@roman01la/how-to-create-clojurescript-app-4e38778c4762)
 
-I use [rum library](https://github.com/tonsky/rum) as wrapper for react, but these ideas can works with any view framework/library.
-I suppose you already installed [lein](https://leiningen.org/#install).
+I use the [rum library](https://github.com/tonsky/rum) as wrapper for react, but these ideas can works with any view framework/library.
+I suppose you have already installed [lein](https://leiningen.org/#install).
 Also I recommend to install [rlwrap](https://github.com/hanslub42/rlwrap) for better experience. It can be done on OSX by `brew install rlwrap`.
 
 ## Concept
-This scheme represent dataflow in application.
+This scheme represents dataflow in application.
 ![Dataflow][1]
 We have few entities here.
 
 * **State** – single atom of data. Keeps all app state not only data, but also UI state
-* **Actions channgel** – [core.async](https://clojure.github.io/core.async/) channel. Pass actions one by one to transform
-* **Transform** – function that receives action, state value and return new state value. This function is **synchronous**
+* **Actions channel** – [core.async](https://clojure.github.io/core.async/) channel. Pass actions one by one to transform
+* **Transform** – function that receives action, states value and returns new states value. This function is **synchronous**
 * **UI** – can be DOM, React, Canvas etc.
 * Other sources of actions. For example: timers, global handlers. If you use [sente](https://github.com/ptaoussanis/sente) you can map and pipe it values to action channel.
 
-Rules is simple. If you want to change state you dispatch an action. Action represent intention of changing data but doesn't guarantee changing. Transform function always sync. It receives state and action and should return new state. If something should be done async transform **should dispatch new action**. That's all. You always know when things happen and you always know where to put new code.
+Rules is simple. If you want to change state you should dispatch an action. Action represents intention of changing data but doesn't guarantee changing. Transform function always sync. It receives state and action and should return new state. If something should be done async transform **should dispatch new action**. That's all. You always know when things happen and you always know where to put new code.
 
 I don't use separate action creators. If you need complex request or data processing before dispatch action – it is just regular function.
 
@@ -133,7 +133,7 @@ Create file `src/redux/flow.cljs` and fill it with
 
 As you can see we define state and actions channel with `defonce` – it helps to keep data between code reloads.
 `go-loop` is used to receive actions from channel.
-Notice we have `transform` multimethod, but don't have any implementation. We will add them latter.
+Notice than we have `transform` multimethod, but we don't have any implementation. We will add them latter.
 
 Create `src/redux/components.cljs`
 
@@ -154,9 +154,9 @@ Create `src/redux/components.cljs`
   [state-atom]
   (+form (r/react state-atom)))
 ```
-It renders header and input with name from state. Notice `on-change` handler. It doesn't change state directly (and it can't because state map is immutable). Instead it calls dispatch.
+It renders header and input with name from the state. Notice `on-change` handler. It doesn't change the state directly (and it can't do because state map is immutable). Instead of it calls dispatch.
 
-Sometimes you don't want to pass state through components tree. In this case you can use `redux.flow/state` directly, but don't change it. For big codebase you can add getter.
+Sometimes you don't want to pass state through the components tree. In this case you can use `redux.flow/state` directly, but don't change it. For a big codebase you can add getter.
 
 Last part is the `src/redux/core.cljs` file. It ties all things together and provides start point plus some dev tools.
 
