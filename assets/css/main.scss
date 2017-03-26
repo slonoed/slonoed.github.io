@@ -52,7 +52,7 @@ ul {
 	list-style: none;
 	li {
 		padding: 5px;
-		padding-left: 10px;
+		padding-left: 0;
 		@media screen and (max-width: $br) {
 			padding: 10px 0 10px 0;
 		}
@@ -312,6 +312,8 @@ pre.highlight {
 
   &__posted {
     margin-top: 10px;
+    color: #777;
+    font-size: 13px;
   }
 }
 
