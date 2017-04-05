@@ -1,3 +1,6 @@
+- name: tg-send – send telegram message from browser
+  url: /tg-send/
+
 - name: tnoty – send data to telegram messenger via webhook
   url: https://hub.docker.com/r/slonoed/tnoty/
 
