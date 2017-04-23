@@ -33,7 +33,7 @@ If the callback returns false value for the first operand `every` stops and func
 returns the first operand.
 If not, it continues for the second operand and returns it.
 
-Similar code for OR function, but with `some`. `some` stops when the callback returns 
+Similar code for OR function, but with `some`. `some` stops when the callback returns
 truthy value.
 
 ```javascript
@@ -76,8 +76,8 @@ This function creates clojure with arguments and returns new function,
 that can be used to obtain values (head and tail) from the pair.
 
 ```javascript
-const head = p => x(true)
-const tail = p => x()
+const head = x => x(true)
+const tail = x => x()
 ```
 
 We can use it this way
@@ -208,6 +208,6 @@ collects more start on github.
 Functions is a powerful tool that complements other language features.
 Functional programming has advantages and disadvantages as any other
 paradigm. Use any tool properly with reason and you'll achieve more.
-And, please, **don't use the code from this post in production**. 
+And, please, **don't use the code from this post in production**.
 
 
