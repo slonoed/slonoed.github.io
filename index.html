@@ -20,17 +20,6 @@ layout: default
   Senior Frontend Developer at <a href="http://flocktory.com">flocktory.com</a>
 </section>
 
-<section>
-  <h2>Tools</h2>
-  <ul>
-  {% for tool in site.data.tools %}
-    <li>
-      <a href="{{ tool.url }}">{{ tool.name }}</a>
-    </li>
-  {% endfor %}
-  </ul>
-</section>
-
 <section class="blog">
   <h2>Blog Posts</h2>
   <ul>
@@ -39,5 +28,16 @@ layout: default
       <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
     {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Tools</h2>
+  <ul>
+  {% for tool in site.data.tools %}
+    <li>
+      <a href="{{ tool.url }}">{{ tool.name }}</a>
+    </li>
+  {% endfor %}
   </ul>
 </section>
