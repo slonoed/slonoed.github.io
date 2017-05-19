@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<div class="post">
+<article class="post">
     <a class="post__back" href="/">&lt;-- home</a>
     <h1 class="post__title">{{ page.title }}</h1>
-    <p class="post__date">{{ page.date | date: '%Y %B %-d' }}</p>
+    <p class="post__date" data-date={{ page.date | date_to_xmlschema }}>{{ page.date | date: '%Y %B %-d' }}</p>
     <p class="post__meta">{{ tags_content }}</p>
     <div class="post__content">
         {{ content }}
@@ -27,4 +27,4 @@ layout: default
     <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
     <script>window.PAGE_ID = "{{ page.id }}"</script>
     <script src="/assets/js/comments.js"></script>
-</div>
+</article>
