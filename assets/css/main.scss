@@ -185,8 +185,10 @@ ul {
 			padding: 0 1px;
 			font-size: 0.9em;
 			border-radius: 3px;
-			background: $color-grey;
 		}
+    code.highlighter-rouge {
+			background: $color-grey;
+    }
 		.codebreak {
 			margin: 15px;
 			border: 0;
@@ -221,7 +223,8 @@ ul {
 pre.highlight {
   margin-bottom: 20px;
   overflow-x: scroll;
-  background-color: #eee;
+  border-right: 4px solid #eee;
+  padding-left: 4px;
 
 	.hll { background-color: #ffffcc }
 	.c { color: #999988; font-style: italic } /* Comment */
