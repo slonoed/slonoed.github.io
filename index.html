@@ -4,35 +4,36 @@ layout: default
 
 {% include header.html %}
 <section>
-  <h2>Contacts</h2>
+  <h3>Contacts</h3>
   email@slonoed.net
 </section>
 <section>
-  <h2>About</h2>
+  <h3>About</h3>
   <p>
-    Effective frontend developer with great experience in web development, 
-    who can find a solution to any issue. Willing to use skills for building the best product.  
+    Effective frontend developer with great experience in web development,
+    who can find a solution to any issue. Willing to use skills for building the best product.
   </p>
 </section>
 
 <section>
-  <h2>Current</h2>
+  <h3>Current</h3>
   Senior Frontend Developer at <a href="http://flocktory.com">flocktory.com</a>
 </section>
 
 <section class="blog">
-  <h2>Blog Posts</h2>
+  <h3>Blog Posts</h3>
   <ul>
     {% for post in site.posts %}
     <li>
-      <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="blog__date">{{ post.date | date: '%Y-%m-%d' }}</span>
     </li>
     {% endfor %}
   </ul>
 </section>
 
 <section>
-  <h2>Tools</h2>
+  <h3>Tools</h3>
   <ul>
   {% for tool in site.data.tools %}
     <li>
