@@ -114,6 +114,7 @@ ol {
 		li {
 			display: inline;
 			padding: 0;
+      margin-right: 0.5em;
 		}
 	}
 }
@@ -201,9 +202,9 @@ ol {
 			}
 		}
 		code {
-      font-family: 'Inconsolata', monospace;
+      font-family: "Lucida Console", Monaco, monospace;
 			padding: 0 1px;
-			font-size: 0.9em;
+			font-size: 0.8em;
 			border-radius: 3px;
 		}
     code.highlighter-rouge {
@@ -217,9 +218,9 @@ ol {
 	}
 }
 
-.post__content p code {
+.post__content code.highlighter-rouge {
   color: #000;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .about {
 	&__title {
@@ -245,14 +246,14 @@ ol {
 
 
 pre.highlight {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Lucida Console", Monaco, monospace;
   margin-bottom: 15px;
   overflow-x: scroll;
 	padding: 5px 2px;
 
 }
  code,  pre {
-color:#fdce93;
+color:#fdfdfd;
 background-color:#3f3f3f;
 }
 
@@ -429,4 +430,8 @@ color:#efef8f;
   text-decoration: underline;
   margin-top: 4px;
   cursor: pointer;
+}
+
+.lang-link {
+  float: right;
 }

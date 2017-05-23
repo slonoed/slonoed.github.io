@@ -23,7 +23,8 @@ layout: default
 <section class="blog">
   <h3>Blog Posts</h3>
   <ul>
-    {% for post in site.posts %}
+    {% assign posts=site.posts | where_exp: "post", "post.lang != 'ru'" %}
+    {% for post in posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
       <span class="blog__date">{{ post.date | date: '%Y-%m-%d' }}</span>
