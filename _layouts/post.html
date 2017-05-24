@@ -39,3 +39,18 @@ layout: default
   <script>window.PAGE_ID = "{{ page.id }}"</script>
   <script src="/assets/js/comments.js"></script>
 </article>
+
+<script>
+  window.addEventListener('load', function() {
+    Array.prototype.forEach.call(document.querySelectorAll('h2'), function(header) {
+      var href = header.id;
+      if (href) {
+        var link = document.createElement('A');
+        link.setAttribute('href', '#' + href);
+        link.innerHTML = '#';
+        link.className = 'anchor-link';
+        header.appendChild(link);
+      }
+    });
+  });
+</script>
