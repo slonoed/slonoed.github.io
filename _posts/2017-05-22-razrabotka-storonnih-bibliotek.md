@@ -195,14 +195,14 @@ new webpack.ProvidePlugin({
 Хорошей идеей будет вешаться на глобальные ошибки и по стеку определять приходят ли они из библиотеки.
 ```javascript
 window.addEventListener('unhandledrejection', event => {
-	if (isOurError(event)) {
-		// log
-	}
+  if (isOurError(event)) {
+    // log
+  }
 });
 window.addEventListener('error', event => {
-	if (isOurError(event)) {
-		// log
-	}
+  if (isOurError(event)) {
+    // log
+  }
 });
 ```
 
