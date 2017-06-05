@@ -15,14 +15,14 @@ body {
 
 h1 {
   font-family: Helvetica, sans-serif;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
   font-weight: bold;
 }
 
 h2 {
   font-family: Helvetica, sans-serif;
 	font-size: 1.5em;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
   margin-top: 30px;
   font-weight: bold;
 }
@@ -30,7 +30,7 @@ h3 {
   font-family: Helvetica, sans-serif;
   font-size: 1.1em;
   font-weight: bold;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
   margin-top: 30px;
   font-weight: bold;
 }
@@ -162,8 +162,20 @@ ol {
 			font-size: 1.25em;
 			font-weight: bold;
 			margin-top: 30px;
-			margin-bottom: 5px;
+			margin-bottom: 15px;
+      position: relative;
 		}
+    .anchor-link {
+      margin-left: 0.5em;
+      position: absolute;
+      left: -1.5em;
+      opacity: 0;
+    }
+    @media screen and (min-width: 1000px) {
+      h2:hover .anchor-link {
+        opacity: 1;
+      }
+    }
 		p {
 			font-size: 1em;
 			margin-bottom: 15px;
@@ -294,7 +306,3 @@ ol {
   float: right;
 }
 
-.anchor-link {
-  margin-left: 0.5em;
-  opacity: 0.5;
-}
