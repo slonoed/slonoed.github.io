@@ -308,3 +308,19 @@ ol {
   float: right;
 }
 
+.logo-dm {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+
+  &--fixed {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+
+    @media screen and (max-width: 892px) {
+      display: none;
+    }
+  }
+}
