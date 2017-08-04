@@ -9,30 +9,33 @@ body {
 	color: $color-black;
 	background: $color-white;
 	font-family: Georgia, serif;
-	font-size: 120%;
+	font-size: 20px;
 	font-weight: 300;
+  line-height:1.6;
+}
+body{
+}
+h1,h2,h3 {
+  line-height:1.2;
+  color:#7d2222;
+  margin: 0.83em 0;
+  font-weight: 400;
+  //font-family: Helvetica, sans-serif;
 }
 
 h1 {
-  font-family: Helvetica, sans-serif;
-	margin-bottom: 15px;
-  font-weight: bold;
 }
 
 h2 {
-  font-family: Helvetica, sans-serif;
-	font-size: 1.8em;
-	margin-bottom: 15px;
-  margin-top: 1.5em;
-  font-weight: bold;
+  font-size: 33px;
+	//margin-bottom: 15px;
+  //margin-top: 1.5em;
 }
 h3 {
-  font-family: Helvetica, sans-serif;
-  font-size: 1.3em;
-  font-weight: bold;
-	margin-bottom: 0.5em;
-  margin-top: 1.25em;
-  font-weight: bold;
+  font-size: 26px;
+  //font-weight: bold;
+	//margin-bottom: 0.5em;
+  //margin-top: 1.25em;
 }
 
 p {
@@ -109,7 +112,8 @@ ol {
 	}
 	h1 {
 		font-size: 2em;
-		margin-bottom: 0;
+    line-height: 1em;
+		margin: 0;
 	}
 	ul {
 		margin-top: 10px;
@@ -149,7 +153,6 @@ ol {
 	padding-bottom: 30px;
 	&__title {
 		font-size: 2.2em;
-		font-weight: 700;
 		margin-top: 20px;
 		margin-bottom: 5px;
 	}
@@ -160,10 +163,6 @@ ol {
 	&__content {
 		padding-top: 20px;
 		h2 {
-			font-size: 1.25em;
-			font-weight: bold;
-			margin-top: 30px;
-			margin-bottom: 15px;
       position: relative;
 		}
     .anchor-link {
@@ -180,7 +179,7 @@ ol {
 		p {
 			font-size: 1em;
 			margin-bottom: 15px;
-      text-align: justify;
+      text-align: left;
       line-height: 170%;
 		}
 		strong {
