@@ -41,7 +41,7 @@ No one will tolerate a code that slows down and worsens the user experience.
 ## Global Object
 In an ideal version, your code should be wrapped in a closure without any way of being called from the outside.
 In case you need to give an API, the best you can afford is one global object that does not cause collisions,
-for example, `window.companyname` or` wingow.ga`.
+for example, `window.companyname` or `wingow.ga`.
 It is a good practice to enable this global object (noConflict), [as jquery does][jquery noconflict] (*do no harm*).
 Your global object should not show the inside. Use closures to store your data.
 

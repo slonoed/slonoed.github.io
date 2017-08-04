@@ -5,6 +5,8 @@
 @import "config";
 @import "code";
 
+$cool-red: #691e1e;
+
 body {
 	color: $color-black;
 	background: $color-white;
@@ -17,7 +19,7 @@ body{
 }
 h1,h2,h3 {
   line-height:1.2;
-  color:#7d2222;
+  color: $cool-red;
   margin: 0.83em 0;
   font-weight: 400;
   //font-family: Helvetica, sans-serif;
@@ -221,8 +223,10 @@ ol {
 			border-radius: 3px;
 		}
     code.highlighter-rouge {
-			background: $color-grey;
+      color: $cool-red;
+			background: rgba(130, 130, 130, 0.24);
       padding: 0 4px;
+      font-size: 0.9em;
     }
 		.codebreak {
 			margin: 15px;
@@ -232,10 +236,6 @@ ol {
 	}
 }
 
-.post__content code.highlighter-rouge {
-  color: #000;
-  font-size: 0.9em;
-}
 .about {
 	&__title {
 		font-size: 1.6em;
