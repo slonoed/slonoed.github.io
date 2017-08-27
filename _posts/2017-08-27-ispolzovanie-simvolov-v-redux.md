@@ -332,7 +332,7 @@ const updatedAt = post[updatedAtKey]
 
 const updatedAtKey = Symbol()
 
-// Вернет компию объекта + поле с датой
+// Вернет копию объекта + поле с датой
 export function withUpdatedAt(item) {
   return {
     ...item,
@@ -408,7 +408,7 @@ const target = {...source}
 console.log(target.regularField + ' '+ target[key]) // hello world
 ```
 
-Однако, при использовании библиотек для компирования поля с символами могут быть потеряны.
+Однако, при использовании библиотек для копирования поля с символами могут быть потеряны.
 
 Еще одна опасность: такие поля будут потеряны при сериализации в JSON.
 
