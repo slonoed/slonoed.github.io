@@ -5,7 +5,7 @@
 @import "config";
 @import "code";
 
-$cool-red: #691e1e;
+$cool-red: #a70606;
 
 body {
 	color: $color-black;
@@ -20,16 +20,16 @@ body{
 h1,h2,h3 {
   line-height:1.2;
   color: $cool-red;
-  margin: 0.83em 0;
+  margin: 1.2em 0 0.5em;
   font-weight: 400;
-  //font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 h1 {
 }
 
 h2 {
-  font-size: 33px;
+  font-size: 38px;
 	//margin-bottom: 15px;
   //margin-top: 1.5em;
 }
@@ -38,6 +38,12 @@ h3 {
   //font-weight: bold;
 	//margin-bottom: 0.5em;
   //margin-top: 1.25em;
+}
+
+blockquote {
+  border-left: 6px solid #dedede;
+  padding-left: 1em;
+  margin: 1em 0;
 }
 
 p {
@@ -221,10 +227,11 @@ ol {
 			padding: 0 1px;
 			font-size: 0.8em;
 			border-radius: 3px;
+      line-height: 1.1em;
 		}
     code.highlighter-rouge {
       color: $cool-red;
-			background: rgba(130, 130, 130, 0.24);
+			background: #fdf6e3;
       padding: 0 4px;
       font-size: 0.9em;
     }
