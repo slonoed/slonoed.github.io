@@ -412,6 +412,25 @@ console.log(target.regularField + ' '+ target[key]) // hello world
 
 Еще одна опасность: такие поля будут потеряны при сериализации в JSON.
 
+## Другие языка
+
+OCaml позволяет создавать обертки над данными:
+
+```ocaml
+type user = {
+  id: int;
+  name: string;
+}
+type timestamp = int
+type 'a entity =
+  | Empty
+  | Loading of 'a
+  | InState of 'a * timestamp
+
+let user =
+  InState ({ id = 123; name = "Zohan" }, 1504470691)
+```
+
 ## Заключение
 
 Описанный пример — лишь частный случай использования символов как ключи для мета-данных.
