@@ -12,18 +12,18 @@ excerpt: ""
 >
 > _-- Phil Karlton_
 
-When doing frontend cache invalidation is no so huge problem. You always can
+When doing frontend cache invalidation, there is not such a huge problem. You can always
 ask a server for fresh data. However, it is not always good to pass data via
-a network, when the client already has this data. What you just need to check
+a network, when a client already has this data. The only thing you need to check
 is this information relevant.
 
-Besides some cases requires knowledge about data status and depends on context.
-Example: list of popular blog posts can contain elements which already in a cache
-for few hours. However, when you visit post page, you need fresh data.
+Besides some cases require knowledge about data status and depend on context.
+Example: a list of popular blog posts can contain the elements which have already been in a cache
+for few hours. However, when you visit post page, you need to fresh the data.
 
 ## Application
 
-Let's take a look at two pages: list of articles page and article page.
+Let's take a look at two pages: the list of articles page and the article page.
 
 ### Data structure
 
@@ -33,7 +33,7 @@ Each article is an object.
 {id: 1, title: 'Songs recorded by Madonna'}
 ```
 
-All server interaction wrapped into API with two methods:
+All server interaction are wrapped into API with two methods:
 
 * `getPosts()` — returns a Promise with array of articles
 * `getPost(id)` — returns a Promise with the article by ID
@@ -70,8 +70,8 @@ export function loadPost(id) {
 
 ### State
 
-The reducer code is also simple. Notice, that articles stored in an object
-instead of an array. Keys in the object are IDs of articles. This normalized
+The reducer code is also simple. Notice that articles are stored in the object
+instead of the array. Keys in the object are IDs of articles. This normalized
 way allows fast search — O(1).
 
 ```javascript
@@ -143,11 +143,11 @@ export default connect(
 ### Article component
 
 The component receives  ID from a router and renders the corresponding article
-or shows preloader if article not in the state.
+or shows preloader if the article is not in the state.
 
-When component did appears it fetches data from the server.  If the article is
-already in the state, component renders it, and after new data arrives,
-component shows fresh version.
+When component appears, it fetches the data from the server.  If the article is
+already in the state, the component renders it, and after the new data arrives,
+the component shows a fresh version.
 
 ```javascript
 import React, {Component} from 'react'
@@ -182,14 +182,16 @@ export default connect((state, props) => ({
 
 ## Checking cache
 
-Assume we want to show only reliable info. On the article page, we want to show data received one minute ago or later.
+Assume we want to show only reliable info. On the article page we want to show data 
+received one minute ago or later.
 
-If the data is old,  we can notify a user about it while fetching update. Alternatively, show preloader.
+If the data is old, we can notify the user about it while fetching update. Alternatively,
+to show preloader.
 
 ## Implementation
 
 For this requirement, we need to store info about time the datum was fetched
-from server.
+from the server.
 There are few options for that.
 
 ### Separate state
@@ -200,7 +202,7 @@ In this case, you have two places with a coupled state which you need to synchro
 
 ### Field inside data item
 
-Another way to store timestamp is to store it inside an article.
+Another way to store timestamp is to store it inside the article.
 
 ```javascript
 export default function counter(state = {}, action) {
@@ -230,7 +232,7 @@ export default function counter(state = {}, action) {
 }
 ```
 
-You can always retrieve a timestamp from an article. However, it leads to
+You can always retrieve a timestamp from the article. However, it leads to
 some issues:
 
 * **Overwriting the field**. You have to avoid this field in server data
@@ -239,7 +241,9 @@ fields in table) you also show this field.
 
 ### WeakMap
 
-[WeakMap][weakmap]{:target="_blank"} allows you to store link from an object (data entity) to an object (metadata). Moreover, GC  removes metadata if entity is removed.
+[WeakMap][weakmap]{:target="_blank"} allows you to store link from one object (data entity) 
+to another object (metadata). 
+Moreover, GC removes metadata if entity is removed.
 
 Thus we can create separate module which contains info about last update with API:
 
@@ -270,9 +274,11 @@ getAge(copy) // doesn't make any sense
 
 ### Symbol
 
-I want to talk about a way that uses one of the new features of language — [symbols][symbol]{:target="_blank"}.
+I want to talk about a way that uses one of the new features of language — 
+[symbols][symbol]{:target="_blank"}.
 
-It is similar to the approach with filed inside object. However, instead of a string, we use a Symbol for a key.
+It is similar to the approach with filed inside the object. However, instead of a string,
+we use a Symbol for a key.
 
 ```javascript
 const updatedAtKey = Symbol()
@@ -311,7 +317,8 @@ component needs to have the symbol for getting the value.
 const updatedAt = post[updatedAtKey]
 ```
 
-Is a good idea to hide implementation details inside a module and prevent direct usage from component or reducer.
+It is a good idea to hide implementation details inside the module and prevent direct 
+usage from the component or reducer.
 
 ```javascript
 // meta.js
@@ -326,7 +333,7 @@ export function withUpdatedAt(item) {
   }
 }
 
-// Вернет возраст объекта в миллисекундах
+// Return object age in milliseconds
 export function getAge(item) {
   return Date.now() - item[updatedAtKey]
 }
@@ -396,7 +403,7 @@ console.log(target.regularField + ' '+ target[key]) // hello world
 
 However, if you use some library to clone an object, these fields can be lost.
 
-Also, these fields will be omitted when serialized.
+Also, these fields would be omitted when serialized.
 
 ## Other languages
 
@@ -419,9 +426,13 @@ let user =
 
 ## Conclusion
 
-This usage is one of many for symbols-keys for metadata. Field with updated timestamp can be used, for example, in cation creators to check a data entity needs an update from server or not.
+This usage is one of many for symbols-keys for metadata. Field with updated timestamp
+can be used, for example, in cation creators to check whether a data entity needs an update 
+from server or not.
 
-Symbols give powerful and therefore dangerous instrument. If you decide to use them for storing data, you  need to understand clearly what are you doing and safely write code to keep program without errors even if you lost metadata.
+Symbols give powerful and therefore dangerous instrument. If you decide to use them for storing data, you
+need to understand clearly what you are doing and safely write code 
+to keep program without errors even if you lost metadata.
 
 [weakmap]: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakMap "WeakMap"
 [symbol]: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol "Symbol"
