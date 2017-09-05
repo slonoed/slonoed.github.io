@@ -12,12 +12,8 @@ layout: default
   <p>
     Effective frontend developer with great experience in web development,
     who can find a solution to any issue. Willing to use skills for building the best product.
+    Currently works as Software Engineer at <a href="https://www.uber.com/">Uber</a>.
   </p>
-</section>
-
-<section>
-  <h3>Current</h3>
-  Software Engineer at <a href="https://www.uber.com/">Uber</a>
 </section>
 
 <section class="blog">
@@ -27,19 +23,7 @@ layout: default
     {% for post in posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="blog__date">{{ post.date | date: '%Y-%m-%d' }}</span>
     </li>
     {% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h3>Tools</h3>
-  <ul>
-  {% for tool in site.data.tools %}
-    <li>
-      <a href="{{ tool.url }}">{{ tool.name }}</a>
-    </li>
-  {% endfor %}
   </ul>
 </section>

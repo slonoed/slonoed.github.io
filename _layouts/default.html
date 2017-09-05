@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head lang="{% if page.lang %}{{ page.lang }}{% else %}en{% endif %}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -39,6 +39,11 @@
 <body>
 
     <div class="wrapper">
+      <a class="post__back" href="/" title="Home">
+        <span class="logo-dm logo-dm--fixed">
+          {% include logo.svg %}
+        </span>
+      </a>
         {{ content }}
     </div>
 
