@@ -65,7 +65,7 @@ This issue can be avoided by using function (and we love functions).
 ## The Datum
 
 For holy functional programming we need immutable functional data Grail.
-I offer you **pair**. Pair contains two elements: the **head** and the **tail**.
+I offer you a **pair**. Pair contains two elements: the **head** and the **tail**.
 And, of course, `pair` is function:
 
 ```javascript
