@@ -41,6 +41,20 @@ h3 {
   //margin-top: 1.25em;
 }
 
+button {
+  font-size: 18px;
+  color: #fff;
+  padding: 6px 16px;
+  border: none;
+  background-color: #a70606;
+}
+button:hover {
+  background-color: #c11e1e;
+}
+button:active {
+  background-color: #9c4747;
+}
+
 blockquote {
   border-left: 6px solid #dedede;
   padding-left: 1em;
