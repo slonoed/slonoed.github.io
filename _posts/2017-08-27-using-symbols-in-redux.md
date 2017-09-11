@@ -70,8 +70,8 @@ export function loadPost(id) {
 
 ### State
 
-The reducer code is also simple. Notice that articles are stored in the object
-instead of the array. Keys in the object are IDs of articles. This normalized
+The reducer code is also simple. Notice that articles are stored in object
+instead of array. Keys in the object are IDs of articles. This normalized
 way allows fast search — O(1).
 
 ```javascript
@@ -121,7 +121,7 @@ class App extends Component {
   render() {
     const {posts} = this.props
 
-    // Until articles loadded — show preloader
+    // Until articles loaded — show preloader
     if (!posts.length) {
       return <b>Loading...</b>
     }
@@ -145,8 +145,8 @@ export default connect(
 The component receives  ID from a router and renders the corresponding article
 or shows preloader if the article is not in the state.
 
-When component appears, it fetches the data from the server.  If the article is
-already in the state, the component renders it, and after the new data arrives,
+When component appears, it fetches data from the server.  If the article is
+already in the state, the component renders it, and after new data arrives,
 the component shows a fresh version.
 
 ```javascript
@@ -185,7 +185,7 @@ export default connect((state, props) => ({
 Assume we want to show only reliable info. On the article page we want to show data 
 received one minute ago or later.
 
-If the data is old, we can notify the user about it while fetching update. Alternatively,
+If data is old, we can notify a user about it while fetching update. Alternatively,
 to show preloader.
 
 ## Implementation
@@ -277,7 +277,7 @@ getAge(copy) // doesn't make any sense
 I want to talk about a way that uses one of the new features of language — 
 [symbols][symbol]{:target="_blank"}.
 
-It is similar to the approach with filed inside the object. However, instead of a string,
+It is similar to the approach with filed inside a object. However, instead of a string,
 we use a Symbol for a key.
 
 ```javascript
