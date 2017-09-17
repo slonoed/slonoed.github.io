@@ -10,7 +10,7 @@ excerpt: ""
 
 _TL;DR use Web Animation API. Works only in Chrome, FF_
 
-There are few ways to animate DOM elements.
+There are some ways to animate DOM elements.
 The most old is the [jQuery .animate()][jquery]. Back in time it gave
 web-developers the holy grail: nice API and perfect browser support.
 
@@ -37,18 +37,18 @@ It was obvious that a way was needed to enable the creation of performant
 animation, which could be accelerated by hardware. That's why specification
 [css3-animations][css3-animations] was created.
 
-The main difference was the declarative syntax based on CSS, which can
-describe the behavior of elements. There are many advantages to this method.
-The main one is support for hardware acceleration for obtaining 60 fps
+The main difference was the declarative syntax based on CSS, which could
+describe the behavior of the elements. There are many advantages to this method.
+The main one is the  support for hardware acceleration for obtaining 60 fps
 for animations. The downside is that it's extremely inconvenient to use such
 animations from JS.
 
 For example, to do something after the end of the animation, you have to listen
-the `animationend` and` webkitAnimationEnd` events on element.
+the `animationend` and` webkitAnimationEnd` events on the element.
 
 ## React way
 
-From the very beginning, the developers of React suggested a way to animate components
+From the very beginning, the developers of React suggested the way to animate components
 by setting the CSS classes to elements. And to handle addition and removal of
 elements they event created [addon][addon], which looks totally weird.
 
@@ -89,8 +89,9 @@ There are different kinds of libraries that work similarly.
 
 ## Web Animations API
 
+Blink based browsers and Firefox already have the support for a new way to animate
 In Blink based browsers (Chrome, Opera, etc.) and in Firefox there is already
-support for a new way to animate elements —  [Web Animations API][spec].
+elements —  [Web Animations API][spec].
 
 The component code can be:
 
@@ -125,7 +126,7 @@ class Animated extends React.Component {
 
 [Live example][example].
 
-In addition to the declarative description of the animation, the execution time
+In addition, to the declarative description of the animation, the execution time
 and the number of repetitions, you can specify the start delay, the type of
 animation, and other properties, which can be specified in CSS.
 
@@ -161,7 +162,7 @@ Web animations API are a powerful animation management tool for JavaScript.
 It is extremely useful in the React components.
 
 Unfortunately, given the support of browsers, it is impossible to use this method
-in production in most cases. But if you are lucky and need to support only
+in production in most cases. However, if you are lucky and need to support only
 Chrome and FF, then `Element.animate` can be a good helper.
 
 
