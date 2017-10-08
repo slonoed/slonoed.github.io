@@ -4,9 +4,9 @@ title:  "Restore deleted Git branch"
 published: true
 ---
 
-It can happen to anyone: remove branches that has not been merged.  
+It can happen to anyone: remove branches that has not been merged.
 
-Quick fix:  
+Quick fix:
 
 1. `git reflog`
 2. Look for last commit in deleted branch, copy it SHA (first column).
@@ -16,11 +16,11 @@ Quick fix:
 
 Details?
 
-A branch in Git is simply a lightweight movable pointer to commit. 
+A branch in Git is simply a lightweight movable pointer to commit.
 
 ![simple brunch][1]
 
-HEAD is pointer to commit you currently have in working copy.   
+HEAD is pointer to commit you currently have in working copy.
 When you delete branch (with `git branch -D feature-branch`) git just delete this pointer
 
 ![simple brunch][2]

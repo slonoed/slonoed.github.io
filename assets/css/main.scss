@@ -100,7 +100,7 @@ ol {
 
 
 .wrapper {
-	max-width: 700px;
+	max-width: 800px;
 	margin: auto;
 	padding: 30px 30px 60px 30px;
 	@media screen and (max-width: $br) {
@@ -227,8 +227,8 @@ ol {
 			}
 		}
 		img {
-			margin-top: 10px;
-			margin-bottom: 10px;
+      display: block;
+      margin: 40px auto;
 			max-width: 100%;
 			@media screen and (max-width: $br) {
 				width: 100%;
@@ -338,8 +338,13 @@ ol {
     top: 30px;
     left: 30px;
 
-    @media screen and (max-width: 892px) {
+    @media screen and (max-width: 992px) {
       display: none;
     }
   }
+}
+
+.color-entity {
+  padding: 10px;
+  font-family: monospace;
 }
