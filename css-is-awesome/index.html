@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS is awesome</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      @font-face {
+          font-family: "Gingham";
+          src: url("/assets/img/gingham/Gingham.woff2") format("woff2"),
+               url("/assets/img/gingham/Gingham.woff") format("woff"),
+               url("/assets/img/gingham/Gingham.ttf") format("truetype");
+      }
+      #box {
+        border: 3px solid black;
+        width: 180px;
+        height: 180px;
+        padding: 10px 10px 12px 10px;
+
+        font-style: normal;
+        font-family: Gingham;
+        font-size: 50px;
+        line-height: 1em;
+        font-weight: 690;
+        font-variation-settings: 'wght' 1, 'wdth' 150;
+      }
+      .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .creds, .creds a {
+        color: gray;
+        font-size: 11px;
+        font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <div id="box">
+        CSS
+        <br/>
+        is
+        <br/>
+        awesome
+      </div>
+      <br>
+      <br>
+      <input id="range" type="range" min="0" max="150" value="0">
+      <br>
+      <br>
+      <div class="creds">
+        via <a href="http://koe.berlin/variablefont/" target="_blank" rel="noopener">Gingham</a>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('range').addEventListener('input', event => {
+        const v = 150 - parseFloat(event.target.value, 10)
+        document.getElementById('box').style.fontVariationSettings = "'wght' 1, 'wdth' " + v +""
+      })
+    </script>
+  </body>
+</html>
