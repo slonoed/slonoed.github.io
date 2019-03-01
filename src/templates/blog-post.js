@@ -48,25 +48,22 @@ class BlogPostTemplate extends React.Component {
       translations,
       translatedLinks,
     } = this.props.pageContext;
-    const lang = post.fields.langKey;
+    const langKey = post.fields.langKey;
 
     const siteUrl = this.props.data.site.siteMetadata.siteUrl;
     // Replace original links with translated when available.
     let html = post.html;
 
-    translations = [];
-    translations.sort((a, b) => {
-      return codeToLanguage(a) < codeToLanguage(b) ? -1 : 1;
-    });
-
-    loadFontsForCode('ru');
     loadFontsForCode('en');
-    const languageLink = '';
+
+    if (langKey === 'ru') {
+      loadFontsForCode('ru');
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          lang={lang}
+          lang={langKey}
           title={post.frontmatter.title}
           description={post.frontmatter.description}
           slug={post.fields.slug}
@@ -85,13 +82,13 @@ class BlogPostTemplate extends React.Component {
                   marginTop: rhythm(-4 / 5),
                 }}
               >
-                {formatPostDate(post.frontmatter.date, lang)}
+                {formatPostDate(post.frontmatter.date, langKey)}
                 {` • ${formatReadingTime(post.timeToRead)}`}
               </p>
             </header>
             <div dangerouslySetInnerHTML={{ __html: html }} />
             <hr />
-            <PostFooter slug={slug} siteUrl={siteUrl} lang={lang} />
+            <PostFooter slug={slug} siteUrl={siteUrl} lang={langKey} />
           </article>
         </main>
         <aside>
@@ -117,7 +114,7 @@ class BlogPostTemplate extends React.Component {
               slonoed
             </Link>
           </h3>
-          <Bio />
+          <Bio langKey={langKey} />
         </aside>
       </Layout>
     );

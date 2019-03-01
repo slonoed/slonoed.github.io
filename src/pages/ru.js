@@ -2,7 +2,9 @@ import React from 'react';
 
 import Main from '../components/main';
 
-export default Main;
+export default props => {
+  return <Main langKey="ru" {...props} />;
+};
 
 export const pageQuery = graphql`
   query {

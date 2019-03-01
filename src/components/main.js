@@ -7,14 +7,14 @@ import SEO from './seo';
 import { rhythm } from '../utils/typography';
 import { formatPostDate, formatReadingTime } from '../utils/helpers';
 
-const Main = ({ data, location }) => {
+const Main = ({ data, location, langKey }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" keywords={[`blog`, `javascript`, `react`]} />
-      <Bio />
+      <Bio langKey={langKey}/>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (

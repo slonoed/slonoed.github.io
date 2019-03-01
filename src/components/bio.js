@@ -4,6 +4,9 @@ import { rhythm } from '../utils/typography';
 
 class Bio extends React.Component {
   render() {
+    const { langKey } = this.props;
+    const hasTelegram = langKey === 'ru';
+
     return (
       <div
         style={{
@@ -32,7 +35,15 @@ class Bio extends React.Component {
           <a href="https://twitter.com/slonoed" rel="noopener noreferrer">
             Twitter
           </a>
-          .
+          .{' '}
+          {hasTelegram && (
+            <>
+              <a href="http://t.me/slonoed" rel="noopener noreferrer">
+                Telegram
+              </a>
+              .
+            </>
+          )}
         </p>
       </div>
     );
