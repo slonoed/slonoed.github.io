@@ -237,7 +237,7 @@ fields in table) you also show this field.
 
 ### WeakMap
 
-[WeakMap][weakmap]{:target="_blank"} allows you to store link from one object (data entity)
+[WeakMap][weakmap] allows you to store link from one object (data entity)
 to another object (metadata).
 Moreover, GC removes metadata if entity is removed.
 
@@ -271,7 +271,7 @@ getAge(copy) // doesn't make any sense
 ### Symbol
 
 I want to talk about a way that uses one of the new features of language —
-[symbols][symbol]{:target="_blank"}.
+[symbols][symbol].
 
 It is similar to the approach with filed inside a object. However, instead of a string,
 we use a Symbol for a key.
@@ -382,7 +382,7 @@ class PostPage extends Component {
 ## Symbols essentials
 
 As any implicit approach, meta information can lead to implicit errors.
-Example: while using [spread operator][spread]{:target="_blank"} symbol
+Example: while using [spread operator][spread] symbol
 keyed field is copied.
 
 ```javascript
