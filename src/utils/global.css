@@ -1,6 +1,10 @@
 body {
   --code-text: hsl(0, 0%, 65%);
 
+  --code-yellow: hsl(52, 88%, 80%);
+  --code-green: hsl(76, 20%, 52%);
+  --code-pink: hsl(297, 8%, 53%);
+
   background-color: var(--bg);
 }
 
@@ -97,8 +101,10 @@ pre[class*='language-'] ::selection {
 }
 
 .token.attr-name {
-  color: rgb(173, 219, 103);
-  font-style: italic;
+  color: var(--code-yellow);
+}
+.token.attr-value {
+  color: var(--code-green);
 }
 
 .token.comment {
@@ -107,7 +113,7 @@ pre[class*='language-'] ::selection {
 
 .token.string,
 .token.url {
-  color: #8f9c6c;
+  color: var(--code-green);
 }
 
 .token.variable {
@@ -118,6 +124,7 @@ pre[class*='language-'] ::selection {
   color: #cca76d;
 }
 
+.token.tag,
 .token.builtin,
 .token.char,
 .token.constant,
@@ -131,29 +138,28 @@ pre[class*='language-'] ::selection {
 
 .token.selector,
 .token.doctype {
-  color: rgb(199, 146, 234);
+  color: var(--code-pink);
   font-style: 'italic';
 }
 
 .token.class-name {
-  color: rgb(255, 203, 139);
+  color: var(--code-yellow)
 }
 
 .token.operator {
   color: var(--code-text);
 }
 
-.token.tag,
 .token.keyword {
-  color: #f9ed9d;
+  color: var(--code-pink)
 }
 
 .token.boolean {
-  olor: #cca76d;
+  color: #cca76d;
 }
 
 .token.property {
-  color: rgb(128, 203, 196);
+  color: hsl(52, 88%, 80%);
 }
 
 .token.namespace {

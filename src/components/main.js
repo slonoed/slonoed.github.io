@@ -14,7 +14,7 @@ const Main = ({ data, location, langKey }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" keywords={[`blog`, `javascript`, `react`]} />
-      <Bio langKey={langKey}/>
+      <Bio langKey={langKey} />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
