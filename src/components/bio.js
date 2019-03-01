@@ -16,6 +16,8 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
+          width="56"
+          height="56"
           alt={`Dmitry Manannikov`}
           style={{
             marginRight: rhythm(1 / 2),
