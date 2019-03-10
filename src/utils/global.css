@@ -108,7 +108,7 @@ pre[class*='language-'] ::selection {
 }
 
 .token.comment {
-  color: #5f5a60;
+  color: hsl(290, 4%, 55%);
 }
 
 .token.string,
