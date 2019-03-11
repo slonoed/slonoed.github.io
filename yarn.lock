@@ -2136,6 +2136,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.2.6"
+  resolved "https://unpm.uberinternal.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -6222,6 +6226,10 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
+just-omit@^1.0.1:
+  version "1.1.0"
+  resolved "https://unpm.uberinternal.com/just-omit/-/just-omit-1.1.0.tgz#ea507d3a251a36383d09e47324181d7f4acb2ea6"
+
 kebab-hash@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/kebab-hash/-/kebab-hash-0.1.2.tgz#dfb7949ba34d8e70114ea7d83e266e5e2a4abaac"
@@ -8461,6 +8469,14 @@ querystringify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
 
+r-dom@^2.4.0:
+  version "2.4.0"
+  resolved "https://unpm.uberinternal.com/r-dom/-/r-dom-2.4.0.tgz#ee705294fe82bf5419ade0be3f0ef9a970552e8c"
+  dependencies:
+    classnames "^2.2.5"
+    just-omit "^1.0.1"
+    react-dom-factories "^1.0.2"
+
 ramda@^0.24.1:
   version "0.24.1"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.24.1.tgz#c3b7755197f35b8dc3502228262c4c91ddb6b857"
@@ -8526,6 +8542,10 @@ react-dev-utils@^4.2.1:
     sockjs-client "1.1.4"
     strip-ansi "3.0.1"
     text-table "0.2.0"
+
+react-dom-factories@^1.0.2:
+  version "1.0.2"
+  resolved "https://unpm.uberinternal.com/react-dom-factories/-/react-dom-factories-1.0.2.tgz#eb7705c4db36fb501b3aa38ff759616aa0ff96e0"
 
 react-dom@16.8.3:
   version "16.8.3"

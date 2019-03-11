@@ -16,6 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                langKey
               }
               frontmatter {
                 title
@@ -33,12 +34,19 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges;
 
+    const getAltSlug = sourcePost => {
+      const { langKey, slug } = sourcePost.node.fields;
+
+      return langKey === 'ru' ? slug.slice(3) : '/ru' + slug;
+    };
+
     posts.forEach((post, index) => {
       createPage({
         path: post.node.fields.slug,
         component: blogPost,
         context: {
           slug: post.node.fields.slug,
+          altSlug: getAltSlug(post),
         },
       });
     });

@@ -7,6 +7,7 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Panel from '../components/panel';
+import AltLang from '../components/alt-lang';
 import { formatPostDate, formatReadingTime } from '../utils/helpers';
 import { rhythm, scale } from '../utils/typography';
 import {
@@ -48,10 +49,10 @@ class BlogPostTemplate extends React.Component {
       translations,
       translatedLinks,
     } = this.props.pageContext;
+
     const langKey = post.fields.langKey;
 
     const siteUrl = this.props.data.site.siteMetadata.siteUrl;
-    // Replace original links with translated when available.
     let html = post.html;
 
     loadFontsForCode('en');
@@ -59,6 +60,8 @@ class BlogPostTemplate extends React.Component {
     if (langKey === 'ru') {
       loadFontsForCode('ru');
     }
+
+    const altPost = this.props.data.altPost;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -84,6 +87,15 @@ class BlogPostTemplate extends React.Component {
               >
                 {formatPostDate(post.frontmatter.date, langKey)}
                 {` • ${formatReadingTime(post.timeToRead)}`}
+                {altPost && (
+                  <span>
+                    {' • '}
+                    <AltLang
+                      langKey={altPost.fields.langKey}
+                      slug={altPost.fields.slug}
+                    />
+                  </span>
+                )}
               </p>
             </header>
             <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -124,7 +136,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $altSlug: String!) {
     site {
       siteMetadata {
         title
@@ -141,6 +153,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      fields {
+        slug
+        langKey
+      }
+    }
+    altPost: markdownRemark(fields: { slug: { eq: $altSlug } }) {
+      id
       fields {
         slug
         langKey

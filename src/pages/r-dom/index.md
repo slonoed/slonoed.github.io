@@ -7,9 +7,14 @@ description: Introduction to r-dom library which allow you to write ReactJS comp
 
 I'm using this library for more than a year in one of my projects and want to share why I like it.
 
-## Usage
+---
 
 The library itself is a very tiny (96 lines) wrapper around `React.createElement` plus few handy features. It doesn't change the way you structure your application. You can even mix it with JSX and can (probably you shouldn't). This is how you use it:
+
+## Usage
+
+I will show how to use this library. If you already familiar with JSX it not something
+different.
 
 For simple tags you can use form `r[tag]([properties], [children])`
 
@@ -35,7 +40,7 @@ r.a({href: '/page'}, 'home')
 <a href="/page">home</a>
 ```
 
-Components use form `r(component, [properties], [children])`
+Components use form `r(Component, [properties], [children])`
 
 ```jsx
 r(Alert, 'Danger!')
@@ -47,11 +52,13 @@ r(Alert, 'Danger!')
 
 **Probably you should use JSX for your React project. It is a standard solution and used in documentation, tutorials, open source projects.**
 
+## Why to use r-dom
+
 When ReactJS only started to gain popularity, there were many debates around using JSX with different arguments.
 
 I don't want to raise these arguments again and instead share why I'm using plain JS syntax for ReactJS components and benefits it could bring.
 
-## Why to use r-dom
+### JavaScript
 
 Many benefits of using this library come from the benefits of using JS.
 
@@ -69,7 +76,7 @@ r.div(
   users.map(user => r.span({key: user.id}, user.name))
 )
 
-// vs
+// same as
 
 <div style={{color: 'red'}}>
   {users.map(user => <span key={user.id)>{user.name}</span>}
@@ -81,18 +88,29 @@ r.div(
 You have to remember to add explicit whitespace between inline elements in JSX.
 
 ```jsx
-<div>
-    <a>first</a>{' '}
-    <a>second</a>
-</div>
-
-// vs
-
 r.div([
   r.a('first),
   ' ',
   r.a('second')
 ])
+
+// same as
+
+<div>
+    <a>first</a>{' '}
+    <a>second</a>
+</div>
+```
+
+### Using shorthand property names
+
+```jsx
+
+r(Alert, {type}, 'Danger!')
+
+// same as
+
+<Alert type={type}>Danger!</Alert>
 ```
 
 ### Conditional rendering feature
@@ -104,7 +122,7 @@ r.div(
   r.span({isRendered: user.credits < 0}, 'You have no credits')
 )
 
-// vs
+// same as
 
 <div>
   {user.credits < 0 && <span>You have no credits</span>}
@@ -122,7 +140,7 @@ r.div([
   r.input({type: 'email'})
 ])
 
-// vs
+// same as
 
 <div>
   <label>User email</label>
@@ -189,5 +207,9 @@ function Component() {
   return r.div([text]) // works!
 }
 ```
+
+## </Conclusion>
+
+I started to use r-dom when I got a legacy project with it. Uncomfortable at first it became one of my favorite tools for React projects. I also see how other people started to like it over time. My next project, which I will do for myself I will be writing with r-dom.
 
 [r-dom]: https://github.com/uber/r-dom
