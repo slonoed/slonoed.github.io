@@ -208,7 +208,7 @@ function Component() {
 }
 ```
 
-## </Conclusion>
+## &lt;/Conclusion&gt;
 
 I started to use r-dom when I got a legacy project with it. Uncomfortable at first it became one of my favorite tools for React projects. I also see how other people started to like it over time. My next project, which I will do for myself I will be writing with r-dom.
 

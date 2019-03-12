@@ -86,7 +86,7 @@ class BlogPostTemplate extends React.Component {
                 }}
               >
                 {formatPostDate(post.frontmatter.date, langKey)}
-                {` • ${formatReadingTime(post.timeToRead)}`}
+                {` • ${formatReadingTime(post.timeToRead, langKey)}`}
                 {altPost && (
                   <span>
                     {' • '}
