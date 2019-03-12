@@ -1,7 +1,7 @@
 ---
 title: Intro to r-dom library
 date: '2019-03-10'
-description: Introduction to r-dom library which allow you to write ReactJS components without JSX.
+description: Introduction to r-dom library which allows you to write ReactJS components without JSX.
 ---
 [r-dom][r-dom] — is a tiny wrapper around `React.createElement` function, which allows you to write React components without JSX.
 
