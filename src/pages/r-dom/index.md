@@ -5,15 +5,15 @@ description: Introduction to r-dom library which allows you to write ReactJS com
 ---
 [r-dom][r-dom] — is a tiny wrapper around `React.createElement` function, which allows you to write React components without JSX.
 
-I've been using this library for more than a year in one of my projects and want to share why I like it.
+I've been using this library for more than a year in one of my projects and I want to share why I like it.
 
 ---
 
-The library itself is a very tiny (96 lines) wrapper around `React.createElement` plus few handy features. It doesn't change the way you structure your application. You can even mix it with JSX and can (probably you shouldn't). This is how you use it:
+The library itself is a very tiny (96 lines) wrapper around `React.createElement` plus few handy features. It doesn't change the way you structure your application. You can (but don't need to) even mix it with JSX. This is how you use it:
 
 ## Usage
 
-I will show how to use this library. If you already familiar with JSX it not something
+I will show how to use this library. If you are already familiar with JSX it's not something
 different.
 
 For simple tags you can use form `r[tag]([properties], [children])`
@@ -32,7 +32,7 @@ r.span(['Hello, ', name])
 <span>Hello, {name}</span>
 ```
 
-Pass props as a first argument
+Pass props as the first argument
 
 ```jsx
 r.a({href: '/page'}, 'home')
@@ -50,13 +50,13 @@ r(Alert, 'Danger!')
 
 ## Why not JSX?
 
-**Probably you should use JSX for your React project. It is a standard solution and used in documentation, tutorials, open source projects.**
+**Probably you should use JSX for your React project. It is a standard solution and is used in documentation, tutorials, open source projects.**
 
 ## Why to use r-dom
 
-When ReactJS only started to gain popularity, there were many debates around using JSX with different arguments.
+When ReactJS was only starting to gain popularity, there were many debates around using JSX with different arguments.
 
-I don't want to raise these arguments again and instead share why I'm using plain JS syntax for ReactJS components and benefits it could bring.
+I don't want to raise these arguments again and instead I share why I'm using plain JS syntax for ReactJS components and the benefits it can bring.
 
 ### JavaScript
 
@@ -68,7 +68,7 @@ When you use JS syntax, you have all kind of editor support, snippets, and flexi
 
 ### No language mixing
 
-This one is very opinionated. I found that switching between two completely syntaxes is unnecessary complexity.
+This one is very opinionated. I found that switching between two completely syntaxes was unnecessary complexity.
 
 ```jsx
 r.div(
@@ -115,7 +115,7 @@ r(Alert, {type}, 'Danger!')
 
 ### Conditional rendering feature
 
-This is **my favorite feature** of the library. It allows skipping component rendering by setting special `isRendering` property to `false`. In many cases, this makes code much more readable.
+This is **my favorite feature** of the library. It allows skipping component rendering by setting special `isRendering` property to `false`. In many cases this makes the code much more readable.
 
 ```jsx
 r.div(
@@ -151,7 +151,7 @@ r.div([
 
 ### Don't need to maintain a closing tag
 
-If you need to change component for this element, you have to do it in two places.
+If you need to change the component for this element, you have to do it in two places.
 
 ```jsx
 <Component>
@@ -159,7 +159,7 @@ If you need to change component for this element, you have to do it in two place
 <Component>
 ```
 
-In r-dom you need to change it ones.
+In r-dom you need to change only one component.
 
 ```jsx
 r(Component, [
@@ -186,7 +186,7 @@ r.div(
 )
 ```
 
-I'm not using this feature often, because CSS-in-JS, but I see a massive benefit for using it with libraries like bootstrap.
+I don't use this feature often, because CSS-in-JS, but I see a massive benefit in using it with libraries like bootstrap.
 
 ## Bonus: ugly part
 
@@ -210,6 +210,6 @@ function Component() {
 
 ## &lt;/Conclusion&gt;
 
-I started to use r-dom when I got a legacy project with it. Uncomfortable at first it became one of my favorite tools for React projects. I also see how other people started to like it over time. My next project, which I will do for myself I will be writing with r-dom.
+I started using r-dom when I got a legacy project with it. Uncomfortable at first, it became one of my favorite tools for React projects. I also see how other people started liking it over time. My next project which I'm going to do for my own business will probably be written with r-dom.
 
 [r-dom]: https://github.com/uber/r-dom
