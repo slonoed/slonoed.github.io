@@ -5,7 +5,7 @@ description: Introduction to r-dom library which allows you to write ReactJS com
 ---
 [r-dom][r-dom] — is a tiny wrapper around `React.createElement` function, which allows you to write React components without JSX.
 
-I've been using this library for more than a year in one of my projects and want to share why I like it.
+I'm using this library for more than a year in one of my projects and want to share why I like it.
 
 ---
 
@@ -188,7 +188,7 @@ r.div(
 
 I'm not using this feature often, because CSS-in-JS, but I see a massive benefit for using it with libraries like bootstrap.
 
-## Bonus: ugly part
+## Bonus: ugly part1
 
 One thing that I suffer from is when r-dom use children object as props.
 
