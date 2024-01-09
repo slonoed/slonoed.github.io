@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-header, section, footer {
+header, section, footer, nav {
     max-width: 800px;
     margin: 0 auto;
     padding: 0;
