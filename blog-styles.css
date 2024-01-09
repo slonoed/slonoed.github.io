@@ -8,8 +8,8 @@ body {
 
 header, section, footer {
     max-width: 800px;
-    margin: 40px auto;
-    padding: 15px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 h1, h2 {
