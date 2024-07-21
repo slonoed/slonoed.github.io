@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How I do code review | Dmitry Manannikov</title>
+    <meta
+      name="description"
+      content="Personal page of Dmitry Manannikov. Staff engineer at Uber and game developer."
+    />
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- favicons end-->
+
+    <link href="./blog-styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home Page</a></li>
+      </ul>
+    </nav>
+
+    <article class="blog-post">
+      <header>
+        <h1>How I do code review</h1>
+        <p><time datetime="2024-07-20">Last Edited: July 20, 2024</time></p>
+      </header>
+
+      <section>
+        <h2>Understanding change</h2>
+        <p>
+          When I review PR I want to <em>understand it</em>. I want to have full context why this
+          change is made and what each line is doing. This allows me to provide actual value rather
+          than blindly stamping with "LGTM" comment.
+        </p>
+
+        <p>
+          Understanding other people's code is hard. Especially when I'm not in context of a
+          project. When I review a diff I spend time getting into context. Every time there are new
+          changes to the same PR I have to spend time again.
+        </p>
+
+        <p>
+          When PR is large and doing multiple things (refactoring, fixing bug, adding new logic)
+          time to get into context and understand every change may take hours. I'm happy to spend
+          time reviewing code but it's fair to ask author to help simplify review process.
+        </p>
+
+        <p>
+          The best way to ensure review is fast and provide best feedback possible is PR should do
+          only one thing. It means breaking large PRs to smaller parts that usually fall into one of
+          2 categories:
+        </p>
+
+        <ul>
+          <li>
+            Refactoring without logic change. Often large and without changes in tests. This allows
+            me to focus if code moved properly and I don't need to suggest changes in logic.
+          </li>
+          <li>
+            Logic change. Small and include tests. I can truly focus on a change, find issues and
+            suggest improvements.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Commenting</h2>
+        <p>I sort my review comments into three main categories:</p>
+
+        <ol>
+          <li>
+            <h3>Critical Bugs</h3>
+            <p>
+              Rarely, I find changes that cause big bugs or performance problems that the author
+              didn't intend. I will point these out in a comment and block the PR. It's important to
+              fix these issues, and the team usually values this.
+            </p>
+          </li>
+          <li>
+            <h3>Useful Suggestions</h3>
+            <p>
+              These comments are about suggesting changes like refactoring, performance
+              optimization, or choosing better names. I make sure these suggestions are helpful,
+              giving clear reasons and other options. For example, instead of just saying I don't
+              like a certain name, I explain why and offer other name choices. I don't block the PR
+              just for these suggestions. I trust my teammates to look at my feedback and address if
+              they think it's right. We talk openly, and I expect explanations if there's any
+              disagreement, but I don't force changes.
+            </p>
+          </li>
+          <li>
+            <h3>Nitpicking</h3>
+            <p>
+              This group includes small, personal preferences that could start unneeded arguments,
+              like small differences in naming or coding style. I usually approve PRs that only have
+              these small issues and I don't require explanation why they are not addressed. To make
+              it clear I mark them with "Nit".
+            </p>
+          </li>
+        </ol>
+
+        <p>
+          This approach helps to keep a good balance in our review process and supports a team
+          environment built on trust and helpful feedback.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>
