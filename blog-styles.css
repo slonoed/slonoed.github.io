@@ -17,6 +17,10 @@ nav {
   padding: 0;
 }
 
+nav {
+  margin-top: 1em;
+}
+
 h1,
 h2 {
   color: #2a2a2a;
