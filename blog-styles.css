@@ -64,6 +64,18 @@ nav li {
   margin-right: 20px;
 }
 
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+li {
+  line-height: 1.5em;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   header,
