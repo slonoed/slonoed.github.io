@@ -1,75 +1,86 @@
 body {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #333;
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
 }
 
-header, section, footer, nav {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0;
+header,
+section,
+article,
+footer,
+nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-h1, h2 {
-    color: #2a2a2a;
+h1,
+h2 {
+  color: #2a2a2a;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 p {
-    font-size: 1em;
-    line-height: 1.5em;
-    margin-top: 0;
-    margin-bottom: 1em;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 time {
-    font-style: italic;
-    color: #666;
+  font-style: italic;
+  color: #666;
 }
 
 nav {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav li {
-    display: inline;
-    margin-right: 20px;
+  display: inline;
+  margin-right: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    header, section, footer {
-        margin: 20px auto;
-        padding: 10px;
-    }
+  header,
+  section,
+  footer {
+    margin: 20px auto;
+    padding: 10px;
+  }
+  article {
+    margin: 0 auto;
+  }
 
-    h1 {
-        font-size: 1.5em;
-    }
+  h1 {
+    font-size: 1.5em;
+  }
 
-    h2 {
-        font-size: 1.2em;
-    }
+  h2 {
+    font-size: 1.2em;
+  }
 
-    p {
-        font-size: 0.9em;
-    }
+  p {
+    font-size: 0.9em;
+  }
 }
